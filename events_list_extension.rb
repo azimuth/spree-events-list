@@ -2,15 +2,16 @@
 # require_dependency 'application'
 
 class EventsListExtension < Spree::Extension
-  version "1.0"
-  description "Describe your extension here"
-  url "http://yourwebsite.com/events_list"
+  version "0.1"
+  description "Events list for sidebar content"
+  url "http://github.com/azimuth/spree-events-list"
 
   # Please use events_list/config/routes.rb instead for extension routes.
 
   # def self.require_gems(config)
   #   config.gem "gemname-goes-here", :version => '1.2.3'
   # end
+
   
   def activate
 

@@ -1,5 +1,6 @@
 class EventsListHooks < Spree::ThemeSupport::HookListener
 
+
   #
   # In this file you can modify the content of the hooks available in the default templates
   # and avoid overriding a template in many situations. Multiple extensions can modify the
@@ -35,9 +36,8 @@ class EventsListHooks < Spree::ThemeSupport::HookListener
   #
   # adding a new tab to the admin navigation
   #
-  #   insert_after :admin_tabs do
-  #     tab(:taxonomies)
-  #   end
-  #
+  insert_after :admin_tabs do
+    %(<%=  tab(:events)  %>)
+   end
 
 end

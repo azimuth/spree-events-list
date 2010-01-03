@@ -1,0 +1,12 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%= t("new_event") %></h1>
+
+<%= error_messages_for :event %>
+
+<% form_for(:event, :url => collection_url, :html => { :multipart => true }) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <p>
+    <%= submit_tag t("create"), {"class" => "wymupdate"}%> or <%= link_to t("cancel"), admin_snippets_path%>
+  </p>
+<% end %>

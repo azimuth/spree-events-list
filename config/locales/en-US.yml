@@ -1,0 +1,16 @@
+---
+en-US:
+  events: "Events"
+  events_desc: "Manage events."
+  new_event: "New Event"
+  editing_event: "Editing Event"
+  visible: "Visible"
+  title: "Title"
+  venue: "Venue"
+  sponsor: "Sponsor"
+  further_information: "Further Information"
+  summary: "Summary"
+  full_description: "Full Description"
+  image: "Image"
+  begin: "Begin"
+  end: "End"

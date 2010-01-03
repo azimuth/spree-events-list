@@ -1,0 +1,30 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%=t("events") %></h1>
+
+<table class="admin-report" width="545">
+	<thead>
+		<tr>
+      		<th><%=t("begin")%> - <%=t("end")%></th>
+                <th><%=t("title")%></th>
+      		<th><%=t("action")%></th>
+    	</tr>
+  	</thead>
+	
+	<tbody>
+    	<% @events.each do |event| %>
+		<tr class="<%= cycle('even', 'odd') %>">
+			<td>
+				<%= event.begin_event.strftime("%b %d, %Y %I:%M%p") %> - <%= event.end_event.strftime("%b %d, %Y %I:%M%p")%>
+			</td>
+                        <td><%= event.title %></td>
+			<td>
+	          <%=link_to t("edit"), edit_object_url(event) %> |
+	          <%=link_to t("delete"), object_url(event), :method => :delete %>
+	        </td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to t("new_event"), new_object_url %>
