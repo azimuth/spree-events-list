@@ -1,0 +1,24 @@
+<h1><%= @event.title %></h1>
+<div style="width: 50%;float: left;">
+  <div><strong>Start Date:</strong>&nbsp;&nbsp;<%= Date.parse(@event.begin_event.to_s).to_s %></div>
+  <div><strong>&nbsp;&nbsp;End Date:</strong>&nbsp;&nbsp;<%= Date.parse(@event.end_event.to_s).to_s %></div>
+</div>
+<div style="width: 50%;float: left;">
+  <% if not @event.start_time.nil? -%>
+    <div><strong>Start Time:</strong> <%= @event.start_time %></div>
+  <% end -%>
+  <div><strong>Venue:</strong> <%= @event.venue %></div>
+  <div><strong>Sponsor:</strong> <%= @event.sponsor %></div>
+</div>
+<div style="text-align: center;">
+  <%= image_tag @event.image.url(:large) %>
+</div>
+<div style="clear: both; width: 75%;" class="event_summary">
+  <%= @event.summary %>
+</div>
+<div class="event_description">
+  <%= @event.full_description %>
+</div>
+  <% if not @event.further_information.nil? -%>
+    <div><%= link_to "Further Information", @event.further_information %></div>
+  <% end -%>

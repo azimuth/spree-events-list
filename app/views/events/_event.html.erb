@@ -1,0 +1,8 @@
+<tr>
+<td><%= link_to(image_tag(event.image.url(:thumb)), "/events/show/#{event.id}") unless event.image_file_size.nil?%></td>
+<td><%= event.title %></td>
+<td><%= event.begin_event.strftime("%b %d, %Y") %> - <%= event.end_event.strftime("%b %d, %Y") %></td>
+<td><%= event.begin_event.strftime("%I:%M%p") %></td>
+<td><%= event.venue %></td>
+<td><%= link_to "Details", "/events/show/#{event.id}", :id => "event_detail_#{event.id}_link" %></td>
+</tr>

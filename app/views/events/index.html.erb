@@ -1,0 +1,12 @@
+<h1>Current Events</h1>
+<table>
+<thead><tr>
+<th>&nbsp;</th>
+<th>Title</th>
+<th>Date</th>
+<th>Time</th>
+<th>Venue</th>
+<th>&nbsp;</th>
+</tr></thead>
+ <%= render :collection => @events, :partial => 'events/event' %>
+</table>
