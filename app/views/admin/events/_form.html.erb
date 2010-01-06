@@ -3,12 +3,6 @@
      <%= javascript_include_tag 'jquery/jquery.js' %>
      <%= javascript_include_tag 'wymeditor/jquery.wymeditor.pack.js' %>
     
-     <%# using calendar from: http://github.com/railssignals/jquery_calendar_date_select %>
-     <%= javascript_include_tag 'calendar_date_select/jquery/jquery.string.1.0.js' %>
-     <%= javascript_include_tag 'calendar_date_select/jquery/jquery.calendardateselect.js' %>
-      
-     <%= stylesheet_link_tag '/stylesheets/calendar_date_select/jquery.calendardateselect.css' %>
-	
 	<script type="text/javascript" charset="utf-8">
 		
 		var $j = jQuery.noConflict();
@@ -18,10 +12,6 @@
 		        cssParser:   'wym_css_parser.js'
 		    });
 		});
-
-                jQuery(document).ready(function($){
-                    $(".cal").datetimeselect();
-                });
 
 	</script>
 <% end %>
@@ -41,11 +31,11 @@
   </tr>
   <tr>
     <td valign="top"><%=t('begin')%></td>
-    <td><%= f.text_field :begin_event, {"class" => "cal", "style" => "width:500px;"}  %></td>
+    <td><%= f.date_select :begin_event  %></td>
   </tr>
   <tr>
     <td valign="top"><%=t('end')%></td>
-    <td><%= f.text_field :end_event, {"class" => "cal", "style" => "width:500px;"}  %></td>
+    <td><%= f.date_select :end_event %></td>
   </tr>
   <tr>
     <td valign="top"><%=t('start_time')%></td>
