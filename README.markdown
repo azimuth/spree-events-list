@@ -7,5 +7,10 @@ Requirements
 ============
 
 * paperclip (should already be installed as a spree dependency)
-* jquery calendar date select - script/plugin install git://github.com/railssignals/jquery_calendar_date_select.git
 
+
+TODO
+====
+
+* Complete integration tests
+* Add unit tests (after the fact, I know, I'm a cowboy coder at heart)
