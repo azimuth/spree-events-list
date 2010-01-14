@@ -1,4 +1,5 @@
-require 'spec_helper'
+require File.dirname(__FILE__) + '/../../../spec_helper'
+
 
 describe "admin/events/index.html.erb" do 
   it "should provide a link to create a new event" do

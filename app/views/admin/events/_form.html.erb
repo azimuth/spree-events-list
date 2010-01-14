@@ -42,8 +42,12 @@
     <td><%= f.text_field :start_time, {"style" => "width: 500px;"} %></td>
   </tr>
   <tr>
-    <td valign="top"><%=t('further_information')%></td>
-    <td><%= f.text_field :further_information, {"style" => "width:500px;"}  %></td> 
+    <td valign="top"><%=t('further_information')%><br />
+	    <span class="small_help"><%=t('further_information_desc')%></span>
+	  </td>
+    <td><%= f.text_field :further_information, {"style" => "width:500px;"} %><br/>
+	    <span class="small_help">Example: <%=t('further_information_example')%></span>
+	  </td>
   </tr>
   <tr>
     <td valign="top"><%=t('summary')%></td>
@@ -54,7 +58,9 @@
     <td><%= f.text_area :full_description, {"style" => "width:500px; height:500px;", "class"=> "wymeditor"} %></td>
   </tr>
     <tr>
-    <td valign="top"><%=t('visible')%></td>
+    <td valign="top"><%=t('visible')%><br />
+	    <span class="small_help"><%=t('visible_desc')%></span>
+	  </td>
     <td><%= f.check_box :visible %></td> 
   </tr>
   <tr>
