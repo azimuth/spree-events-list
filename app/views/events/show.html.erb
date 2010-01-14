@@ -10,15 +10,17 @@
   <div><strong>Venue:</strong> <%= @event.venue %></div>
   <div><strong>Sponsor:</strong> <%= @event.sponsor %></div>
 </div>
-<div style="text-align: center;">
-  <%= image_tag @event.image.url(:large) %>
-</div>
+	<% if (@event.respond_to?(:image)) and (@event.image.respond_to?(:url))-%>
+    <div style="text-align: center;">
+      <%= image_tag @event.image.url(:large) %>
+    </div>
+	<% end -%>
 <div style="clear: both; width: 75%;" class="event_summary">
   <%= @event.summary %>
 </div>
 <div class="event_description">
   <%= @event.full_description %>
 </div>
-  <% if not @event.further_information.nil? -%>
+  <% if not @event.further_information == "" and not @event.further_information == nil -%>
     <div><%= link_to "Further Information", @event.further_information %></div>
   <% end -%>
