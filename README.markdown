@@ -7,10 +7,11 @@ Requirements
 ============
 
 * paperclip (should already be installed as a spree dependency)
+* wymeditor http://github.com/azimuth/spree-wymeditor
 
 
 TODO
 ====
 
 * Complete integration tests
-* Add unit tests (after the fact, I know, I'm a cowboy coder at heart)
+* Add unit tests 
