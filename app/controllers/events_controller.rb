@@ -5,7 +5,7 @@ class EventsController < Spree::BaseController
 
   def show
     @event = Event.find(params[:id])
-    render :template => 'events/show',  :layout => 'plain'
+    render :template => 'events/show'
   end
 
 end
