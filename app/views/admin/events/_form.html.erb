@@ -1,0 +1,81 @@
+<% content_for :head do %>
+
+  <%= javascript_include_tag 'jquery/jquery.js' %>
+  <%= javascript_include_tag 'wymeditor/jquery.wymeditor.js' %>
+
+
+  <script type="text/javascript" charset="utf-8">
+
+    var $j = jQuery.noConflict();
+    $j(function() {
+      $j('.wymeditor').wymeditor({
+        xhtmlParser: 'xhtml_parser.js',
+        cssParser:   'wym_css_parser.js',
+        stylesheet: '/stylesheets/wymeditor.css?v='+Math.random(),
+        containersItems: [
+          {'name': 'P', 'title': 'Paragraph', 'css': 'wym_containers_p'},
+          {'name': 'H1', 'title': 'Heading_1', 'css': 'wym_containers_h1'},
+          {'name': 'H2', 'title': 'Heading_2', 'css': 'wym_containers_h2'},
+          {'name': 'H3', 'title': 'Heading_3', 'css': 'wym_containers_h3'},
+          {'name': 'PRE', 'title': 'Preformatted', 'css': 'wym_containers_pre'},
+          {'name': 'BLOCKQUOTE', 'title': 'Blockquote', 'css': 'wym_containers_blockquote'},
+        ],
+        lang: '<%= I18n.locale.to_s.split("-").first %>'
+      });
+    });
+
+  </script>
+<% end %>
+
+<table class="admin-report" width="545">
+  <tr>
+    <td valign="top"><%=t('title')%></td>
+    <td><%= f.text_field :title, {"style" => "width:500px;"} %></td>
+  </tr>
+  <tr>
+    <td valign="top"><%=t('venue')%></td>
+    <td><%= f.text_field :venue, {"style" => "width:500px;"}  %></td> 
+  </tr>
+  <tr>
+    <td valign="top"><%=t('sponsor')%></td>
+    <td><%= f.text_field :sponsor, {"style" => "width:500px;"}  %></td> 
+  </tr>
+  <tr>
+    <td valign="top"><%=t('begin')%></td>
+    <td><%= f.date_select :begin_event  %></td>
+  </tr>
+  <tr>
+    <td valign="top"><%=t('end')%></td>
+    <td><%= f.date_select :end_event %></td>
+  </tr>
+  <tr>
+    <td valign="top"><%=t('start_time')%></td>
+    <td><%= f.text_field :start_time, {"style" => "width: 500px;"} %></td>
+  </tr>
+  <tr>
+    <td valign="top"><%=t('further_information')%><br />
+	    <span class="small_help"><%=t('further_information_desc')%></span>
+	  </td>
+    <td><%= f.text_field :further_information, {"style" => "width:500px;"} %><br/>
+	    <span class="small_help">Example: <%=t('further_information_example')%></span>
+	  </td>
+  </tr>
+  <tr>
+    <td valign="top"><%=t('summary')%></td>
+    <td><%= f.text_area :summary, {"style" => "width:500px; height:200px;", "class"=> "wymeditor"} %></td> 
+  </tr>
+  <tr>
+    <td valign="top"><%=t("full_description")%>:</td>
+    <td><%= f.text_area :full_description, {"style" => "width:500px; height:500px;", "class"=> "wymeditor"} %></td>
+  </tr>
+    <tr>
+    <td valign="top"><%=t('visible')%><br />
+	    <span class="small_help"><%=t('visible_desc')%></span>
+	  </td>
+    <td><%= f.check_box :visible %></td> 
+  </tr>
+  <tr>
+    <td valign="top"><%=t('image')%></td>
+    <td><%= image_tag(@event.image.url(:thumb)) + "<br/>" if not @event.image.size.nil? %><%= f.file_field :image, {"style" => "width:500px;"}  %></td> 
+  </tr>
+</table>
