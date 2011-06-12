@@ -4,7 +4,6 @@ Gem::Specification.new do |s|
   s.version     = '0.50.0'
   s.summary     = 'Administrable list of events'
   s.description = ''
-  s.required_ruby_version = '>= 1.8.7'
 
   s.author            = 'Christopher Maujean'
   s.email             = 'cmaujean@gmail.com'
@@ -18,6 +17,4 @@ Gem::Specification.new do |s|
 
   s.has_rdoc = true
 
-  s.add_dependency('spree_core', '>= 0.50.0')
-  s.add_dependency('spree_editor', '~> 0.50.0')
 end
