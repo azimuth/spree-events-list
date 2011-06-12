@@ -4,13 +4,13 @@
   <div><strong>&nbsp;&nbsp;End Date:</strong>&nbsp;&nbsp;<%= Date.parse(@event.end_event.to_s).to_s %></div>
 </div>
 <div style="width: 50%;float: left;">
-  <%= if not @event.start_time.nil? -%>
+  <% if not @event.start_time.nil? -%>
     <div><strong>Start Time:</strong> <%= @event.start_time %></div>
   <% end -%>
   <div><strong>Venue:</strong> <%= raw @event.venue %></div>
   <div><strong>Sponsor:</strong> <%= raw @event.sponsor %></div>
 </div>
-	<%= if (@event.respond_to?(:image)) and (@event.image.respond_to?(:url))-%>
+	<% if (@event.respond_to?(:image)) and (@event.image.respond_to?(:url))-%>
     <div style="text-align: center;">
       <%= image_tag @event.image.url(:large) %>
     </div>
@@ -21,6 +21,6 @@
 <div class="event_description">
   <%= raw(@event.full_description) %>
 </div>
-  <%= if not @event.further_information == "" and not @event.further_information == nil -%>
+  <% if not @event.further_information == "" and not @event.further_information == nil -%>
     <div><%= link_to "Further Information", @event.further_information %></div>
   <% end -%>

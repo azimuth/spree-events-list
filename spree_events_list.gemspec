@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_events_list'
-  s.version     = '0.50.0'
+  s.version     = '0.50.02'
   s.summary     = 'Administrable list of events'
   s.description = ''
 
