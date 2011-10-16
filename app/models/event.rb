@@ -7,6 +7,6 @@ class Event < ActiveRecord::Base
 
   # visible events that start within 'to' days of today, or ended less than 'from' days ago.
   def Event.find_visible_by_date(to, from) 
-    Event.find_all_by_visible(true, :conditions => ["begin_event > ? or end_event > ?", DateTime.now + to.to_i.days, DateTime.now - from.to_i.days])
+    Event.where('visible = ? and (begin_event > ? or end_event > ?)', true, DateTime.now + to.to_i.days, DateTime.now - from.to_i.days).order("begin_event ASC")
   end
 end
